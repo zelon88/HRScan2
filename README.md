@@ -6,7 +6,6 @@
 
 ### A self-hosted drag-and-drop virus & malware scanning server.
 
-![HRScan2](https://github.com/zelon88/HRConvert2/blob/master/Screenshots/HRScan2_1.png)
 # Screenshots
 ![HRScan2](https://github.com/zelon88/HRScan2/blob/master/Screenshots/HRScan2_1.png)	
 ![HRScan2](https://github.com/zelon88/HRScan2/blob/master/Screenshots/HRScan2_2.png)
