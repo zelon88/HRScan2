@@ -51,8 +51,8 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.0';
-$versions = 'PHP-AV App v3.7 | Virus Definition v4.6, 8/1/2018';
+$HRScanVersion = 'v1.1';
+$versions = 'PHP-AV App v3.8 | Virus Definition v4.7, 8/19/2018';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
 $JanitorDeleteIndex = FALSE;
@@ -247,7 +247,7 @@ if (isset($_POST["clamScanButton"])) {
         continue; }
       shell_exec(str_replace('  ', ' ', str_replace('   ', ' ', 'clamscan -r '.$Thorough.' '.$ScanDir.'/'.$File.' | grep FOUND >> '.$ClamLogFile)));
       $ClamLogFileDATA = @file_get_contents($ClamLogFile);
-      if (strpos($ClamLogFileDATA, 'Virus Detected') !== TRUE && strpos($ClamLogFileDATA, 'FOUND') !== TRUE) { 
+      if (strpos($ClamLogFileDATA, 'FOUND') == FALSE) { 
         $MAKELogFile = file_put_contents($LogFile, 'OP-Act: No infection detected in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND);
         $MAKELogFile = file_put_contents($ClamLogFile, 'OP-Act: No infection detected in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND); }
       if (strpos($ClamLogFileDATA, 'Virus Detected') == TRUE or strpos($ClamLogFileDATA, 'FOUND') == TRUE) { 
@@ -282,7 +282,7 @@ if (isset($_POST['phpavScanButton'])) {
     if ($infected === 0) {
       $MAKELogFile = file_put_contents($LogFile, 'OP-Act: No infection detected on '.$Time.'.'.PHP_EOL, FILE_APPEND); 
       $MAKELogFile = file_put_contents($PHPAVLogFile, 'OP-Act: No infection detected on '.$Time.'.'.PHP_EOL, FILE_APPEND); }
-    if ($infected >= 1) {
+    if ($infected > 0) {
       $MAKELogFile = file_put_contents($LogFile, 'WARNING!!! HRScan2351, Potential infection found in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND);     
       $MAKELogFile = file_put_contents($PHPAVLogFile, 'WARNING!!! HRScan2351, Potential infection found in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND); }
     $dirCount = $fileCount = $infected = 0; } 

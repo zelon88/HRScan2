@@ -69,8 +69,9 @@ function virus_check($file, $defs, $debug, $defData, $AVLogFile) {
                 $txt = 'OP-Act: Scanning chunk ... ';
                 $MAKELogFile = file_put_contents($AVLogFile, $txt.PHP_EOL, FILE_APPEND); }
               foreach ($defs as $virus) {
+                $virus = explode("\t", $virus[0]);
                 if (isset($virus[1]) && $virus[1] !== '' && $virus[1] !== ' ') {
-                  if (strpos($data, $virus[1]) or strpos($file, $virus[1])) {
+                  if (strpos($data, $virus[1]) !== FALSE or strpos($file, $virus[1]) !== FALSE) { 
                     // File matches virus defs.
                     $txt = 'Infected: '.$file.' ('.$virus[0].', Data Match: '.$virus[1].')';
                     $MAKELogFile = file_put_contents($AVLogFile, 'OP-Act: '.$txt.PHP_EOL, FILE_APPEND);
@@ -83,7 +84,7 @@ function virus_check($file, $defs, $debug, $defData, $AVLogFile) {
               $report .= '<p class="r">'.$txt.'</p>'; }
           fclose($handle); } 
           if (isset($virus[2]) && $virus[2] !== '' && $virus[2] !== ' ') {
-            if (strpos($data1, $virus[2])) {
+            if (strpos($data1, $virus[2]) !== FALSE) {
               // File matches virus defs.
               $txt = 'Infected: '.$file.' ('.$virus[0].', MD5 Hash Match: '.$virus[2].')';
               $MAKELogFile = file_put_contents($AVLogFile, 'OP-Act: '.$txt.PHP_EOL, FILE_APPEND);
@@ -91,7 +92,7 @@ function virus_check($file, $defs, $debug, $defData, $AVLogFile) {
               $infected++;
               $clean = 0; } }
            if (isset($virus[3]) && $virus[3] !== '' && $virus[3] !== ' ') {
-            if (strpos($data2, $virus[3])) {
+            if (strpos($data2, $virus[3]) !== FALSE) {
               // File matches virus defs.
               $txt = 'Infected: '.$file.' ('.$virus[0].', SHA256 Hash Match: '.$virus[3].')';
               $MAKELogFile = file_put_contents($AVLogFile, 'OP-Act: '.$txt.PHP_EOL, FILE_APPEND);
@@ -104,9 +105,9 @@ function virus_check($file, $defs, $debug, $defData, $AVLogFile) {
       if ($defData !== $data2) {
          $clean = 1;
         foreach ($defs as $virus) {
-          $filesize = @filesize($file);
+          $virus = explode("\t", $virus[0]);
           if (isset($virus[1]) && $virus[1] !== '' && $virus[1] !== ' ') {
-            if (strpos($data, $virus[1])) {
+            if (strpos($data, $virus[1]) !== FALSE or strpos($file, $virus[1]) !== FALSE) {
              // File matches virus defs.
               $txt = 'Infected: '.$file.' ('.$virus[0].', Data Match: '.$virus[1].')';
               $MAKELogFile = file_put_contents($AVLogFile, 'OP-Act: '.$txt.PHP_EOL, FILE_APPEND);
@@ -114,7 +115,7 @@ function virus_check($file, $defs, $debug, $defData, $AVLogFile) {
               $infected++;
               $clean = 0; } }
           if (isset($virus[2]) && $virus[2] !== '' && $virus[2] !== ' ') {
-            if (strpos($data1, $virus[2])) {
+            if (strpos($data1, $virus[2]) !== FALSE) {
                 // File matches virus defs.
               $txt = 'Infected: '.$file.' ('.$virus[0].', MD5 Hash Match: '.$virus[2].')';
               $MAKELogFile = file_put_contents($AVLogFile, 'OP-Act: '.$txt.PHP_EOL, FILE_APPEND);
@@ -122,7 +123,7 @@ function virus_check($file, $defs, $debug, $defData, $AVLogFile) {
               $infected++;
               $clean = 0; } }
            if (isset($virus[3]) && $virus[3] !== '' && $virus[3] !== ' ') {
-            if (strpos($data2, $virus[3])) {
+            if (strpos($data2, $virus[3]) !== FALSE) {
                 // File matches virus defs.
               $txt = 'Infected: '.$file.' ('.$virus[0].', SHA256 Hash Match: '.$virus[3].')';
               $MAKELogFile = file_put_contents($AVLogFile, 'OP-Act: '.$txt.PHP_EOL, FILE_APPEND);
