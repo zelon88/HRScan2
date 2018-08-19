@@ -1,0 +1,5 @@
+COMMIT 8/19/2019
+v1.0 - Initial commit.
+
+-v1.0.
+-Add HRScan2 to Github.
