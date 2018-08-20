@@ -63,7 +63,7 @@ $SesHash3 = $SesHash.'/'.$SesHash2;
 $SesHash4 = hash('ripemd160', $Salts6.$Salts5.$Salts4.$Salts3.$Salts2.$Salts1);
 $ScanDir0 = $ScanLoc.'/'.$SesHash;
 $ScanDir = $ScanDir0.'/'.$SesHash2;
-$ScanTemp = 'DATA';
+$ScanTemp = $InstLoc.'/DATA';
 $ScanTempDir0 = $ScanTemp.'/'.$SesHash;
 $ScanTempDir = $ScanTempDir0.'/'.$SesHash2;
 $LogInc = '0';
@@ -146,22 +146,22 @@ foreach ($RequiredIndexes as $RequiredIndex) {
 
 // / -----------------------------------------------------------------------------------
 // / The following code will clean up old files.
-if (file_exists($ScanLoc)) {
-  $DFiles = scandir($ScanLoc);
+if (file_exists($ScanDir)) {
+  $DFiles = scandir($ScanDir);
   $now = time();
   foreach ($DFiles as $DFile) {
     if ($DFile == 'index.html' or in_array($DFile, $defaultApps)) continue;
-    if (($now - fileTime($ScanLoc.'/'.$DFile)) > ($Delete_Threshold * 60)) { // Time to keep files.
+    if (($now - fileTime($ScanDir.'/'.$DFile)) > ($Delete_Threshold * 60)) { // Time to keep files.
       if (is_file($DFile)) {
         chmod ($DFile, 0755);
-        if (file_exists($ScanLoc.'/'.$DFile)) unlink($ScanLoc.'/'.$DFile); 
-        $txt = ('OP-Act: Cleaned '.$ScanLoc.'/'.$DFile.' on '.$Time.'.');
+        if (file_exists($ScanDir.'/'.$DFile)) unlink($ScanDir.'/'.$DFile); 
+        $txt = ('OP-Act: Cleaned '.$ScanDir.'/'.$DFile.' on '.$Time.'.');
         $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND); }
       if (is_dir($DFile)) {
-        $CleanDir = $ScanLoc.'/'.$DFile;
+        $CleanDir = $ScanDir.'/'.$DFile;
         chmod ($CleanDir, 0755);
         cleanFiles($CleanDir); } 
-      cleanFiles($ScanLoc); } } }
+      cleanFiles($ScanDir); } } }
 if (file_exists($ScanTemp)) {
   $DFiles = scandir($ScanTemp);
   $now = time();
@@ -280,8 +280,8 @@ if (isset($_POST['phpavScanButton'])) {
       continue; }
     $infected = virus_check($ScanDir.'/'.$File, $defs, $CONFIG['debug'], $defData, $AVLogFile); 
     if ($infected === 0) {
-      $MAKELogFile = file_put_contents($LogFile, 'OP-Act: No infection detected on '.$Time.'.'.PHP_EOL, FILE_APPEND); 
-      $MAKELogFile = file_put_contents($PHPAVLogFile, 'OP-Act: No infection detected on '.$Time.'.'.PHP_EOL, FILE_APPEND); }
+      $MAKELogFile = file_put_contents($LogFile, 'OP-Act: No infection detected in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND); 
+      $MAKELogFile = file_put_contents($PHPAVLogFile, 'OP-Act: No infection detected in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND); }
     if ($infected > 0) {
       $MAKELogFile = file_put_contents($LogFile, 'WARNING!!! HRScan2351, Potential infection found in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND);     
       $MAKELogFile = file_put_contents($PHPAVLogFile, 'WARNING!!! HRScan2351, Potential infection found in '.$File.' on '.$Time.'.'.PHP_EOL, FILE_APPEND); }
