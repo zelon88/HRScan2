@@ -51,7 +51,7 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.1';
+$HRScanVersion = 'v1.2';
 $versions = 'PHP-AV App v3.8 | Virus Definition v4.7, 8/19/2018';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
@@ -105,6 +105,12 @@ function fileTime($filePath) {
   if (file_exists($filePath)) {
     $stat = filemtime($filePath);
     return ($stat); } }
+function is_dir_empty($dir) { 
+  if (is_dir($dir)) { 
+    $contents = scandir($dir);
+    foreach ($contents as $content) { 
+      if ($content == '.' or $content == '..') return FALSE; } }
+  return TRUE; }
 function cleanFiles($path) { 
   global $ScanLoc, $ScanTemp, $InstLoc, $defaultApps;
   if (is_dir($path)) { 
