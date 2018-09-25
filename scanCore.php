@@ -8,8 +8,8 @@
 // / This project is protected by the GNU GPLv3 Open-Source license.
 // / 
 // / APPLICATION DESCRIPTION ...
-// / This application is designed to provide a web-interface for converting file formats
-// / on a server for users of any web browser without authentication. 
+// / This application is designed to provide a web-interface for scanning files 
+// / for viruses on a server for users of any web browser without authentication. 
 // / 
 // / HARDWARE REQUIREMENTS ... 
 // / This application requires at least a Raspberry Pi Model B+ or greater.
@@ -17,8 +17,7 @@
 // / 
 // / DEPENDENCY REQUIREMENTS ... 
 // / This application requires Debian Linux (w/3rd Party audio license), 
-// / Apache 2.4, PHP 7.0+, JScript, WordPress & mySql (optional), LibreOffice, Unoconv, 
-// / ClamAV, Rar, Unrar, Unzip, and 7zipper.
+// / Apache 2.4, PHP 7.0+, JScript, WordPress & mySql (optional) & ClamAV.
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
@@ -38,12 +37,12 @@ else $IP = htmlentities(str_replace(str_split('~#[](){};:$!#^&%@>*<"\''), '', $_
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
-// / The following code sets an echp variable that adjusts printed URL's to https when SSL is enabled.
+// / The following code sets an echo variable that adjusts printed URL's to https when SSL is enabled.
 if (!empty($_SERVER['HTTPS']) && $_SERVER['SERVER_PORT'] == 443) $URLEcho = 's'; 
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
-// / The following code sets or validates a Token so it can be used as a unique idebtifier for the session.
+// / The following code sets or validates a Token so it can be used as a unique identifier for the session.
 if (!isset($Token1) or strlen($Token1) < 19) $Token1 = hash('ripemd160', rand(0, 1000000000).rand(0, 1000000000)); 
 if (isset($Token2)) if ($Token2 !== hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3.$Salts4.$Salts5.$Salts6)) die('ERROR!!! HRScan263, Authentication error!!!'); 
 if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3.$Salts4.$Salts5.$Salts6); 
@@ -51,7 +50,7 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.2';
+$HRScanVersion = 'v1.3';
 $versions = 'PHP-AV App v3.8 | Virus Definition v4.7, 8/19/2018';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 

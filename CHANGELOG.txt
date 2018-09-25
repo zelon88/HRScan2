@@ -1,3 +1,10 @@
+COMMIT 9/25/2018
+v1.3 - Fix typos in comments.
+
+-v1.3.
+-Fix typos in comments.
+
+--------------------
 COMMIT 8/20/2018
 v1.2 - Fix missing function.
 

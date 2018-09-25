@@ -28,11 +28,10 @@ $your_code_here = null;
 
 // / -----------------------------------------------------------------------------------
 set_time_limit(0);
-// / OFFICIAL HRCONVERT2 SANITIZED API INPUTS
+// / OFFICIAL HRSCAN2 SANITIZED API INPUTS
 
-// / The following blocks of code each represent a distnct HRConvert2 API input.
+// / The following blocks of code each represent a distnct HRScan2 API input.
 // / To use the official API, satisfy the corresponding POST or GET variables below.
-// / API inputs require that the user be logged in. Non-logged-in users will receieve a login screen.
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
