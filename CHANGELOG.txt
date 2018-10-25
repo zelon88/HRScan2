@@ -1,3 +1,10 @@
+COMMIT 10/24/2018
+v1.4 - Fix bugs with auto cleanup of files.
+
+-v1.4.
+-Fix bugs with auto-cleanup of files.
+
+--------------------
 COMMIT 9/25/2018
 v1.3 - Fix typos in comments.
 

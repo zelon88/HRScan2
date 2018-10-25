@@ -50,7 +50,7 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.3';
+$HRScanVersion = 'v1.4';
 $versions = 'PHP-AV App v3.8 | Virus Definition v4.7, 8/19/2018';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
@@ -151,38 +151,29 @@ foreach ($RequiredIndexes as $RequiredIndex) {
 
 // / -----------------------------------------------------------------------------------
 // / The following code will clean up old files.
-if (file_exists($ScanDir)) {
-  $DFiles = scandir($ScanDir);
+if (file_exists($ScanTemp)) { 
+  $DFiles = array_diff(scandir($ScanTemp), array('..', '.'));
   $now = time();
-  foreach ($DFiles as $DFile) {
-    if ($DFile == 'index.html' or in_array($DFile, $defaultApps)) continue;
-    if (($now - fileTime($ScanDir.'/'.$DFile)) > ($Delete_Threshold * 60)) { // Time to keep files.
-      if (is_file($DFile)) {
-        chmod ($DFile, 0755);
-        if (file_exists($ScanDir.'/'.$DFile)) unlink($ScanDir.'/'.$DFile); 
-        $txt = ('OP-Act: Cleaned '.$ScanDir.'/'.$DFile.' on '.$Time.'.');
-        $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND); }
-      if (is_dir($DFile)) {
-        $CleanDir = $ScanDir.'/'.$DFile;
-        chmod ($CleanDir, 0755);
-        cleanFiles($CleanDir); } 
-      cleanFiles($ScanDir); } } }
-if (file_exists($ScanTemp)) {
-  $DFiles = scandir($ScanTemp);
+  foreach ($DFiles as $DFile) { 
+    if (in_array($DFile, $defaultApps)) continue;
+    $DFilePath = $ScanTemp.'/'.$DFile;
+    if ($DFilePath == $ScanTemp.'/index.html') continue; 
+    if ($now - fileTime($DFilePath) > ($Delete_Threshold * 60)) { // Time to keep files.
+      if (is_dir($DFilePath)) { 
+        @chmod ($DFilePath, 0755);
+        cleanFiles($DFilePath);
+        if (is_dir_empty($DFilePath)) @rmdir($DFilePath); } } } }
+if (file_exists($ScanLoc)) { 
+  $DFiles = array_diff(scandir($ScanLoc), array('..', '.'));
   $now = time();
-  foreach ($DFiles as $DFile) {
-    if ($DFile == 'index.html' or in_array($DFile, $defaultApps)) continue;
-    if (($now - fileTime($ScanTemp.'/'.$DFile)) > ($Delete_Threshold * 60)) { // Time to keep files.
-      if (is_file($DFile)) {
-        chmod ($DFile, 0755);
-        if (file_exists($ScanTemp.'/'.$DFile)) unlink($ScanTemp.'/'.$DFile); 
-        $txt = ('OP-Act: Cleaned '.$ScanTemp.'/'.$DFile.' on '.$Time.'.');
-        $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND); }
-      if (is_dir($DFile)) {
-        $CleanDir = $ScanTemp.'/'.$DFile;
-        chmod ($CleanDir, 0755);
-        cleanFiles($CleanDir); } 
-      cleanFiles($ScanTemp); } } }
+  foreach ($DFiles as $DFile) { 
+    if (in_array($DFile, $defaultApps)) continue;
+    $DFilePath = $ScanLoc.'/'.$DFile;
+    if ($now - fileTime($DFilePath) > ($Delete_Threshold * 60)) { // Time to keep files.
+      if (is_dir($DFilePath)) { 
+        @chmod ($DFilePath, 0755);
+        cleanFiles($DFilePath); 
+        if (is_dir_empty($DFilePath)) @rmdir($DFilePath); } } } }
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
