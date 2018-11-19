@@ -37,16 +37,16 @@ set_time_limit(0);
 // / -----------------------------------------------------------------------------------
 // / Sanitize the Token GET variable.
 if (isset($_POST['Token1'])) {
-  $Token1 = str_replace(str_split('~#[](){};:$!#^&%@>*<"\''), '', $_POST['Token1']); }
+  $Token1 = str_replace('//', '/', str_replace('..', '', str_replace(str_split('|~#[](){};:$!#^&%@>*<"\''), '', $_POST['Token1']))); }
 if (isset($_POST['Token2'])) {
-  $Token2 = str_replace(str_split('~#[](){};:$!#^&%@>*<"\''), '', $_POST['Token2']); }
+  $Token2 = str_replace('//', '/', str_replace('..', '', str_replace(str_split('|~#[](){};:$!#^&%@>*<"\''), '', $_POST['Token2']))); }
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
 // / Sanitize the noGui GET variable to disable the descriptive header text.
 // / Good for usage in a small iframe.
 if (isset($_POST['noGui'])) {
-  $_GET = str_replace(str_split('~#[](){};:$!#^&%@>*<"\''), '', $_GET['noGui']); }
+  $_GET = str_replace('//', '/', str_replace('..', '', str_replace(str_split('|~#[](){};:$!#^&%@>*<"\''), '', $_GET['noGui']))); }
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------

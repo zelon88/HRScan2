@@ -1,3 +1,11 @@
+COMMIT 11/18/2018
+v1.5 - Improve sanitization.
+
+-v1.5.
+-Improve sanitization.
+-Based on input from neogeovr on Reddit.
+
+--------------------
 COMMIT 10/24/2018
 v1.4 - Fix bugs with auto cleanup of files.
 

@@ -50,7 +50,7 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.4';
+$HRScanVersion = 'v1.5';
 $versions = 'PHP-AV App v3.8 | Virus Definition v4.7, 8/19/2018';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
@@ -69,14 +69,14 @@ $LogInc = '0';
 $ScanGuiCounter1 = $ConsolidateLogs = 0;
 $LogFile = $LogDir.'/HRScan2_'.$LogInc.'_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
 $ClamLogFileName = 'ClamScan_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
-$ClamLogFile = $ScanDir.'/'.$ClamLogFileName;
-$ClamLogTempFile = $ScanTempDir.'/'.$ClamLogFileName;
+$ClamLogFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanDir.'/'.$ClamLogFileName)));
+$ClamLogTempFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanTempDir.'/'.$ClamLogFileName)));
 $PHPAVLogFileName = 'PHPAVScan_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
-$PHPAVLogFile = $ScanDir.'/'.$PHPAVLogFileName;
-$PHPAVLogTempFile = $ScanTempDir.'/'.$PHPAVLogFileName;
+$PHPAVLogFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanDir.'/'.$PHPAVLogFileName)));
+$PHPAVLogTempFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanTempDir.'/'.$PHPAVLogFileName)));
 $ConsolidatedLogFileName = 'ScanAll_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
-$ConsolidatedLogFile = $ScanDir.'/'.$ConsolidatedLogFileName;
-$ConsolidatedLogTempFile = $ScanTempDir.'/'.$ConsolidatedLogFileName;
+$ConsolidatedLogFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanDir.'/'.$ConsolidatedLogFileName)));
+$ConsolidatedLogTempFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanTempDir.'/'.$ConsolidatedLogFileName)));
 $defaultLogDir = $InstLoc.'/Logs';
 $defaultLogSize = '1048576';
 $defaultApps = array('index.html', '.', '..', '..');
