@@ -50,8 +50,8 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.5';
-$versions = 'PHP-AV App v3.8 | Virus Definition v4.7, 8/19/2018';
+$HRScanVersion = 'v1.6';
+$versions = 'PHP-AV App v3.9 | Virus Definition v4.8, 3/25/2019';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
 $JanitorDeleteIndex = FALSE;
