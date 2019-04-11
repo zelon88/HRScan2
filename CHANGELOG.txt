@@ -1,3 +1,12 @@
+COMMIT 4/10/2019
+v1.7 - PHP-AV App to v4.0. Defs to v4.9. Improve consistency of scan results.
+
+-v1.7. 
+-PHP-AV App to v4.0. 
+-Defs to v4.9.
+-Improve consistency of scan results.
+
+--------------------
 COMMIT 3/25/2019
 v1.6 - PHP-AV App to v3.9. Defs to v4.7. Add SHA1 detection.
 

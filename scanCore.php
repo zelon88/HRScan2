@@ -50,8 +50,8 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.6';
-$versions = 'PHP-AV App v3.9 | Virus Definition v4.8, 3/25/2019';
+$HRScanVersion = 'v1.7';
+$versions = 'PHP-AV App v4.0 | Virus Definition v4.9, 4/10/2019';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
 $JanitorDeleteIndex = FALSE;
@@ -136,7 +136,7 @@ if (!file_exists($LogFile)) $MAKELogFile = file_put_contents($LogFile, 'OP-Act: 
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
-// / The following code creates required data directories if they do not exist.
+// / The following code creates required data directoreis if they do not exist.
 if (!is_dir($ScanLoc)) {
   $txt = ('ERROR!!! HRScan278, The specified ScanLoc does not exist at '.$ScanLoc.' on '.$Time.'.');
   $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND); }
@@ -223,7 +223,7 @@ if (isset($_POST['scanAll'])) {
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
-// / The following code is performed when a user selects to scan the files they've uploaded with ClamAV.
+// / The following code is performed when a user selects to Clamscan the files they've uploaded with ClamAV.
 if (isset($_POST["clamScanButton"])) {
   $_POST['clamScanButton'] = str_replace('//', '/', str_replace('///', '/', str_replace(str_split('[]{};:$!#^&%@>*<'), '', $_POST['clamScanButton'])));
   $txt = ('OP-Act: Initiated ClamScanner on '.$Time.'.');
@@ -286,7 +286,7 @@ if (isset($_POST['phpavScanButton'])) {
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
-// / The following code consolidates the logfiles from ClamAV and PHP-AV when the ScanAll button is selected.
+// / The following code consolididates the logfiles from ClamAV and PHP-AV when the ScanAll button is selected.
 if ($ConsolidateLogs === 1) { 
   $spacer = '----------';
   $txt1 = 'OP-Act: User selected to scan all files on '.$Time.'.';
