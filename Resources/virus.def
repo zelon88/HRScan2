@@ -714,6 +714,163 @@ Trojan Disttrak.31	vdsk911.sys
 Trojan Disttrak.32	ntertmgr32.exe
 Trojan Disttrak.33	ntertmgr64.exe
 Trojan Disttrak.34	usbvideo324.pnf
+Trojan Ruby.1	if first_line != virus_top	b727b40999396587cf41dcb0e0a65ec0	131fa083cb8cd7ed02f48f4fba0f5190ea60d700031c00542c366097b4657463
+Trojan Ruby.2	= '#0x3a'
+Trojan Ruby.3	w.call(FUScaZXvqH,
+Trojan Ruby.4	FzJnoy
+Trojan Ruby.5	WMIC.exe shadowcopy delete
+Trojan Ruby.6	vssadmin.exe delete shadows
+Trojan Ruby.7	Bcdedit.exe /set {default} recoveryenabled no
+Trojan Ruby.8	Bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures
+Trojan Ruby.9	cmd.exe /C wevtutil.exe cl
+Trojan PowerShell.1	110.10.179.65:80			638b7b0536217c8923e856f4138d9caff7eb309d
+Trojan PowerShell.2	download/microsoftp.jpg			d30e8c7543adbc801d675068530b57d75cabb13f
+Trojan PowerShell.3	<Command>mshta.exe</Command>			973b1ca8661be6651114edf29b10b31db4e218f7
+Trojan PowerShell.4	syscheck.vbs			691686839681adb345728806889925dc4eddb74e
+Trojan PowerShell.5	SndVolSSO.txt			3cf4b44c9470fb5bd0c16996c4b2a338502a7517
+Trojan PowerShell.6	activator.ps1:log.txt
+Trojan PowerShell.7	sunjavascheduler.txt
+Trojan PowerShell.8	Const HIDDEN_WINDOW = 12
+Trojan PowerShell.9	("/OGaaaaa6ytd
+Trojan PowerShell.10	kb-10233.exe
+Trojan PowerShell.11	product_info.dll
+Trojan PowerShell.12	208.67.222.222:53
+Trojan PowerShell.13	teriava.com
+Trojan PowerShell.14	$$cpte
+Trojan PowerShell.15	$$ecpte
+Trojan PowerShell.16	testObj.Remove 1
+Trojan PowerShell.17	kerberos::tgt exit
+Trojan PowerShell.18	logonpasswords exit
+Trojan PowerShell.19	sekurlsa
+Trojan PowerShell.20	lsadump::sam exit
+Trojan PowerShell.21	kerberos:ptt
+Trojan PowerShell.22	c:\programdata\log.dat
+Trojan CPP.1	SetWindowsHookEx(WH_CBT, msgBoxHook, 0, GetCurrentThreadId());
+Trojan CPP.2	enablePayloads
+Trojan CPP.3	waveOutOpen(&hwo, WAVE_MAPPER, &fmt, NULL, NULL, CALLBACK_NULL);
+Trojan CPP.4	BY THE MEMZ TROJAN.
+Trojan CPP.5	KILLMSGS,
+Trojan CPP.6	"KillMessages"
+Trojan CPP.7	\nYour PC is
+Trojan CPP.8	Sleep(payloads[p].startDelay);
+Trojan CPP.9	HANDLE note = CreateFileA("\\note.txt", GENERIC_READ | GENERIC_WRITE,1
+Trojan CPP.10	considered malware.\r\n\
+Trojan CPP.11	CreateThread(NULL, NULL, &watchdogThread, NULL, NULL, NULL);
+Trojan CPP.12	LRESULT CALLBACK watchdogWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+Trojan CPP.13	DWORD WINAPI ripMessageThread(LPVOID parameter) {
+Trojan CPP.14	void killWindows() {	5421781c2c05e64ef20be54e2ee32e37
+Trojan CPP.15	void killWindowsInstant() {	5394b09cf2a0b3d1caaecc46c0e502e3
+Trojan CPP.16	PUNICODE_STRING AccountName,	1a4d58e281103fea2a4ccbfab93f74d2
+Trojan CPP.17	OutputDebugString(L"PasswordFilter");	018433e8e815d9d2065e57b759202edc
+Trojan CPP.18	FILE* pFile = fopen("c:\\windows\\temp\\logFile.txt", "a+");	facec411b6d6aa23ff80d1366633ea7a
+Trojan Go.1	MAIL TO WHOEVER IS IMPORTANT
+Trojan Go.2	All your servers will be DDoS
+Trojan Go.3	We are Armada Collective.
+Trojan Go.4	struct scanner.PHP{
+Trojan Go.5	struct scanner.Service{
+Trojan Go.6	iface scanner.Dialer{
+Trojan Go.7	iface scanner.Scanner{
+Trojan Go.8	iface scanner.PHPExecutor{
+Trojan Go.9	struct scanner.ConnScanner {
+Trojan Go.10	struct scanner.HTTP {		0bf24e0bc69f310c0119fc199c8938773cdede9d1ca6ba7ac7fea5c863e0f099
+Trojan Go.11	struct scanner.HttpScanner{		3fcd17aa60f1a70ba53fa89860da3371a1f8de862855b4d1e5d0eb8411e19adf
+Trojan Go.12	struct scanner.Drupal{		513224149cd6f619ddeec7e0c00f81b55210140707d78d0e8482b38b9297fc8f
+Trojan Go.13	struct scanner.Wordpress {		941330c6be0af1eb94741804ffa3522a68265f9ff6c8fd6bcf1efb063cb61196
+Trojan Go.14	int main_main()		992ed9c632eb43399a32e13b9f19b769c73d07002d16821dde07daa231109432
+Trojan Go.15	tmweb.ru
+Trojan Go.16	"Ethereum-WalletFailed to find Failed
+Trojan Go.17	FindNextVolumeWFindVolume
+Trojan Go.18	"monero-keystorems: gomaxprocs=multipart
+Trojan Go.19	HyperCheats.rar
+Trojan Go.20	HyperCheats.zip
+Trojan Node.1	rawReq.write(JSON.stringify(body, null, 2))
+Trojan Node.2	var reproduce = function(target) {
+Trojan Node.3	var getEntryPoint = function(packageJSON) {		8b90859b19e3e3dea8d923996709210ed48ff3249563f56ff12eb1936ffcc295
+Trojan Node.4	var getTargets = function(targets, dir) {		afc100fb28f7bac05e41d9ae33f184502b8068642b7fd05970eb72bf1786892c
+Trojan Python.1	injecteex64	5ffefc13a49c138ac1d454176d5a19fd
+Trojan Python.2	injecteex86	b508908cc44a54a841ede7214d34aff3
+Trojan Python.3	MinerBlocker	e5ba5f821da68331b875671b4b946b56
+Trojan Python.4	proc = subprocess.Popen(data, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)	596dc36cd6eabd8861a6362b6b55011a
+Trojan Python.5	SetValueEx(key ,'Adobe_ReaderX',0,REG_SZ,r"%TEMP%mw.exe")	645176c6d02bdb8a18d2a6a445dd1ac3
+Trojan Python.6	bablo39.php
+Trojan Python.7	188.225.18.203
+Trojan Python.8	@.*@ -> inject js/i.js
+Trojan Python.9	80 -> 24861
+Trojan Python.10	443 -> 24136
+Trojan Python.11	95.56.246.182
+Trojan Python.12	194.105.148.87
+Trojan Python.13	213.135.106.194
+Trojan Python.14	aWJhbmswbmVja2xhY2UucnU
+Trojan Python.15	b24saW51LmFsZWZiYW5rLnJ1
+Trojan Python.16	aWJhbmsuc3Bpcm10YmFuay5ydQ
+Trojan Python.17	dmJyci5ydQ
+Trojan Python.18	ZGJvMS51cmFsZm
+Trojan Python.19	b2ZjLnJ1
+Trojan Python.20	cm9kbmF5YXN2eWF6LnJ1
+Trojan Python.21	*{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}
+Trojan Python.22	l.IsValidCodePage(587903595)
+Trojan Python.23	l.GetFileSize(4028719249,0)
+Trojan Python.24	A.SwitchDesktop(2761630931)
+Trojan Python.25	l.VerSetConditionMask(4023949374,975516802,3027135998,9930938)
+Trojan Python.26	l.GetFileType(4282997275)
+Trojan Python.27	C.glColor3ub(255, 255, 255)
+Trojan Python.28	a = [[(- 1), (- 1)], [(- 1), 1], [1, 1], [1, (- 1)]]
+Trojan Python.29	_fields_ = [('pt', c_ushort),
+Trojan Python.30	A.RegisterHotKey(3322104681,3081727047,2221883463,745264245)
+Trojan Python.31	_fields_ = [('Lt', c_ulong),
+Trojan Python.32	drunkdared=spokenbier+meantreads
+Trojan Python.33	R('Not an MZ image!')
+Trojan Python.34	villainweapon('echorough='+solehers)
+Trojan Python.35	R(("Failed to resolve the the '%s!%s' import" % (string_at(LO), string_at(mG))))
+Trojan Python.36	pupilabhorred="r"
+Trojan Python.37	villainweapon=exec
+Trojan Python.37	dmJyci5ydQ==
+Trojan Python.38	cnNoYi5ydQ==
+Trojan Python.39	Y2hhc2UuY29t
+Trojan Python.40	fellreels="r"
+Trojan Python.41	aS12dGIuYnk=
+Trojan Python.42	Z29zdXNsdWdpLnJ1
+Trojan Python.43	aWIuc2xzcC5zaw==
+Trojan Python.44	ZGVsdGEtb25saW5lLmt6
+Trojan Python.45	dWJyci5ydQ==
+Trojan Python.46	eWFyYmFuay5ydQ==
+Trojan Python.47	c21wb25iYW5rLnJ1
+Trojan Python.48	d3d3LnlhbmRleC5jb20=
+Trojan Python.49	aWJhbmsyLnJ1
+Trojan Python.50	YmFuay50YWF0dGEucnU=
+Trojan Python.51	b25saW5lLmJtLnJ1
+Trojan Python.52	YWxiYW5rLnJ1
+Trojan Python.53	YnNiLmJ5
+Trojan Python.54	aWJhbTI0LnJ1
+Trojan Python.55	bW1iYW5rLnJ1
+Trojan Python.56	YXZiYW5rLnJ1
+Trojan Python.57	if (c.cd) eval(c01(c10(bd(c.cd))));
+Trojan Python.58	googletagmanage.com
+Trojan Python.59	h = JSON.parse(h);
+Trojan Python.60	eval(c01(c10(bd(html.cd))));
+Trojan Python.61	var exec = "di9+aC83PHA=";
+Trojan Python.62	1e22b;CertFreeCertificateChain->51380;5
+Trojan Python.63	1c8b6;WSAConnectByNameA->50c60;5
+Trojan Python.64	value = text.value # Dump the content in value
+Trojan Python.65	get_keystrokes(log_dir, log_name):
+Trojan Python.66	keylogger.get_keystrokes(log_dir, log_name)
+Trojan Python.67	elif i == 0x0d: # If <ENTER>, log the line typed then clear the line variable
+Trojan VBS.1	SmallPlasticKeyboard7 = Round(447)
+Trojan VBS.2	Avon82 = Round(608)
+Trojan VBS.3	backingup43 = "Web"
+Trojan VBS.4	copy23 = Round(MoneyMarketAccount37)
+Trojan VBS.5	Function reboot5()
+Trojan VBS.6	withdrawal60 = Round(412)
+Trojan VBS.7	"_4@http:"
+Trojan VBS.8	AwesomeSteelComputer16 = "nde.com.br"
+Trojan VBS.9	Metal33 = "2@http:/"
+Trojan VBS.10	reboot5 = withdrawal2 + ComputersGardenBooks30 + BooksGroceryBeauty50
+Trojan VBS.11	compelling69 = "" + program71 + GroceryBeauty72
+Trojan Java.1	<title>AhMyth</title>
+Trojan Java.2	assertEquals("ahmyth.mine.king.ahmyth", appContext.getPackageName());
+Trojan JS.1	victimsList.addVictim(
+Trojan JS.2	victimsList.getVictim(index).socket;
+Trojan JS.3	send("SocketIO:VictimDisconnected");
 Crazy Toolbar IE Exploit	crazy-toolbar.com
 JS.Scob.Trojan	217.107.218.147
 Liber Inc. Exploit	advadmin.biz
@@ -1889,9 +2046,6 @@ Known Spyware Host: Malspam.136	http://185.189.58.222/uh.exe
 Known Spyware Host: Malspam.137	ransomeware.bit
 Known Spyware Host: Malspam.138	zonealarm.bit
 Known Spyware Host: Malspam.139	gandcrab2pie73et.onion
-
-
-
 Known Ransomware Host:	slater.chat.ru
 Known Ransomware Host:	hundeschulegoerg.de
 Known Ransomware Host:	capitalsend.info
@@ -2170,3 +2324,107 @@ Known Ransomware Host: RigEK.3	parking-services.us
 Known Ransomware Host: RigEK.4	188.225.78.226
 Known Ransomware Host: RigEK.5	188.225.35.5
 Known Ransomware Host: RigEK.6	wdwefwefwwfewdefewfwefw.onion
+Malware Malspam.155	+gPp6bGvrqa9/fz2770A/amupqawrp8=	474b3cd073b0a40d656b1a2f5bb673cf	07a99580b94a4854a7e49ef38d03f070350baab088130b23d79dde29242eb346
+Malware Malspam.156	printto(\"%1\",\"%2\",\"%3\",\"%4\")	9bce099b5b01c305a5d98f1fd262bce1	468200d4d207a7cc1df245b9670fcf9e3c491dd344643cd7edcf8a82f2cde214
+Malware Malspam.157	SUSRAIZCqllahrCohrlojSarZSalpecasZ	00aaf0ddcc8d9b197c148e44d9e72d8d	2cccdc51aea02049dc7f96f510a13311f112096a7d870a97d70232356ddef42b
+Malware Malspam.158	SYST%-\\#urrENt#ONtrOLSEt\\SErvICEs\\	a548c18aa678626dab9b60628712cc18	d4d1708e2ea1f897d2db66e0c1be8486a0bb62e0834d65d98991fe0f79cb7c11
+Malware Malspam.159	\\\\.\\agmkis2	03B196D513E102D7035A19204A36EC4C	8ecf4f11e3ff132b88d72fa3dd458e1e2d1badfee892fed7d855228ecc9495a1
+Malware Malspam.160	dwm_dropped	74B6EB643F42253B9B60116723B95D22087A765A	a0bdb809a45a5558bcad4d66290f084f8eb7e9ceb6bdd13132fc3e5f3c9255c6
+Malware Malspam.161	Tdx_Dropped		ca30c42334fcc693320772b4ce1df26fe5f1d0110bc454ec6388d79dffea4ae8
+Malware Malspam.162	TdxWCfg.exe		38ac35fd95358b84cd91d9ba55ceda9039dde7d908fb1ac736aa332d6d7d9e28
+Malware Malspam.163	_Heather_Tamse.doc		b7ef644b7883bbbbf5f0869b193d22190260570606646e61099a7df383144b41
+Malware Malspam.164	_Gould,_Carolyn.doc		9bdd885fdc1fcdcc34054062c0e3fce007a2ea5c0a4f4366eefac836c697b465
+Malware Malspam.165	_Stinson,_Lisa.doc		507d1559ec7507a311f2be88cd7110511402300769f0fe89fe17d36d4224c6e8
+Malware Malspam.166	_Michael_Kaba.doc		2d6a7cc9a14b7d9764bd481abc84a06739e94a9bef7a84c6a30b0c5b65cdf463
+Malware Malspam.167	_Oleksiy_Shapovalov.doc		e54dd6213683d48db6b86af92636817106138bc49f8cb6bebe39926ccb4f0af7
+Malware Malspam.168	_Beatriz_Márquez.doc		01e7207e732e67fb3280597ea39bb8ca59fba7bdede1bb4d509e0947d69a5e0a
+Malware Malspam.169	_Sharon_Gough.doc		19554594d13500ff0c0f5d73d07fa4ec0bf44ca2b3b2581be470cdd02919a7d0
+Malware Malspam.170	_Brian_Roberts.doc		ea52d89e63297de4bfbe6bae72e3c928dfdacde64b5585c797d08dc6595c9557
+Malware Malspam.171	_Tran_Nguyen.doc		1790952c31d0f142519e8d5762bd441be97cb050b353ecdc91b19a8b44ea59d5
+Malware Malspam.172	_Troy_Yochelson.doc		58449c472d5841504af747b8558245b3416c01faae9843f8dd395000a9a6e704
+Malware Malspam.173	launderability.exe		51f670520fe4b7f5d827e2f1798c45439d35fed19e9aca6ed0a21acb93527f00
+Malware Malspam.174	WUDHost.exe		204d34b2c3271db299dec30ccf0ca845dcd33558b0ee86eb956db3e2a6b4d5c2
+Malware Malspam.175	Ogtqhhyuwind.lnk		a8fa0aa5f33508d872863684f2ddec8146b3287b0de25e24516b1d9f97e39acf
+Malware Malspam.176	jrv0q		be176c34ee14506001aa17e6570be57c79038b23789f3d407db370ad5bc2a6c6
+Malware Malspam.177	nircmdc.exe		d7bb1f853e55fa7f80f04bf1cd4b20129843a6821881dff0bf860dbcfbf33bac
+Malware Malspam.178	taiwantotallydeputy		6432d90a7ffbbdd41b0da8443d2d1c4f377dabb6ffde4f6e28a8bd88d41732fb
+Malware Malspam.179	blog/inv.exe
+Malware Malspam.180	ivanajonkovic.com
+Malware Malspam.181	9684ff.
+Malware Malspam.182	bJava.exe
+Malware Malspam.183	afroamericanec.bit
+Malware Malspam.184	snap.cr-acad.com
+Malware Malspam.185	nledarwoq()
+Malware Malspam.186	xyiihcxp.exe
+Malware Malspam.187	Chrome.Update.dce
+Malware Malspam.188	PrBhQkFh.xQE
+Malware Malspam.189	iellsorting.exe
+Malware Malspam.190	FYRINGSSEDDELEN
+Malware Malspam.191	TAPI32.dll
+Malware Malspam.192	WTSAPI32.dll
+Malware Malspam.193	BdeUISrv.exe
+Malware Malspam.194	chaibuckz.com
+Malware Malspam.195	cognitionclassroom.com
+Malware Malspam.196	fastandup.co.in
+Malware Malspam.197	intecwi.org
+Malware Malspam.198	mcnconstruction.net
+Malware Malspam.199	propertiesfirst.com
+Malware Malspam.200	sewardsfollybarandgrill.net
+Malware Malspam.201	unlaca
+Malware Malspam.202	etsofevenghen.com
+Malware Malspam.203	hincasupheck.ru
+Malware Malspam.204	seromratbo.ru
+Malware Malspam.205	milaromanoff.com
+Malware Malspam.206	docusign@milaromanoff.com
+Malware Malspam.207	ivanajankovic.com
+Malware Malspam.208	dokucenter.optitime.de
+Malware Malspam.209	jointings.org
+Malware Malspam.210	kitcross.ca
+Malware Malspam.211	shawneklassen.com
+Malware Malspam.212	laxmigroup1986.com
+Malware Malspam.213	BN13CB.tmp
+Malware Malspam.214	degrand_lemunst@yahoo.com
+Malware Malspam.215	neighbor.onegooglechecksim.xyz
+Malware Malspam.216	chichi.onegoogledeleterent.xyz
+Malware Malspam.217	lot.onegooglechecksim.xyz
+Malware Malspam.218	pppoe.bit
+Malware Malspam.219	weather0.bit
+Malware Malspam.220	mygranny.bit
+Malware Malspam.221	six6.bit
+Malware Malspam.222	PERSPIRATIONS.vbs
+Malware Malspam.223	PERSPIRATIONS.exe
+Malware Malspam.224	Hestekraftens.exe
+Malware Malspam.225	xenophora.exe
+Malware Malspam.226	learncpp.bit
+Malware Malspam.227	/eesti-amatoare-neighbor
+Malware Malspam.228	dkdkq.exe
+Malware Malspam.229	?s=d14d8cd32ec253835c076c04f7e67da2mf
+Malware Malspam.230	dffc4090b3576aae0fb5f800c91f9173fl
+Malware Malspam.231	198e4404289f5109a67192288b5294f5sw
+Malware Malspam.232	pantera-classic-chichi
+Malware Malspam.233	e31e6edb08bf0ae9fbb32210b24540b6fl
+Malware Malspam.234	336d3757542e4bd97b71091bffd0c275mf
+Malware Malspam.235	holiday-titanime-lot
+Malware Malspam.236	a6acd7f14a570b2aed5b7175b47133bbfl
+Malware Malspam.237	d4a09da02780baeca3114b1b9162871bsw
+Malware Malspam.238	606b700bb49450ae37ad3a041661df07mf
+Malware Malspam.239	rozhan-hse.com
+Malware Malspam.240	newageconversions.com
+Malware Malspam.241	CVE-2018-8174.py
+Malware Malspam.242	beaveries/aoer.phtml
+Malware Malspam.243	Psoriasic
+Malware Malspam.244	onlinedattingforlive.info
+Malware Malspam.245	russkistandart.info
+Malware Malspam.246	not-my-guilty.com
+Malware Malspam.247	capitalinvest.ac.ug
+Malware Malspam.248	https://raw.githubusercontent.com/w7374520/CVE-2018-8174_EXP/master/CVE-2018-8174.py
+Malware Malspam.249	http://51.15.252.131/CC/index.php
+Malware Malspam.250	http://51.15.252.131/files/go.exe
+Malware Malspam.251	ddosprotected=1
+Malware Malspam.252	1u2.exe
+Malware Malspam.253	yourseo.ac.ug
+Malware Malspam.254	wog92bqzqg1m9j4i3.website
+Malware Malspam.255	http://95.142.47.43/v2.bin
+Malware Malspam.256	http://95.142.47.43/c2.bin
+Malware Malspam.257	http://pastebin.com/raw/jkBxauyv
+Malware Malspam.258	\AppData\Roaming\Temp\rad
