@@ -22,10 +22,10 @@
 
 // / -----------------------------------------------------------------------------------
 // / The following code will load required HRScan2 files.
-if (!file_exists('config.php')) die ('ERROR!!! HRScan226, Cannot process the HRScan2 Configuration file (config.php)!'.PHP_EOL); 
-else require_once ('config.php');
-if (!file_exists('sanitizeCore.php')) die ('ERROR!!! HRScan233, Cannot process the HRScan2 Sanitize Core file (sanitizeCore.php)!'.PHP_EOL); 
-else require_once ('sanitizeCore.php'); 
+if (!file_exists(realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR.'config.php')) die ('ERROR!!! HRScan226, Cannot process the HRScan2 Configuration file (config.php)!'.PHP_EOL); 
+else require_once (realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR.'config.php');
+if (!file_exists(realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR.'sanitizeCore.php')) die ('ERROR!!! HRScan233, Cannot process the HRScan2 Sanitize Core file (sanitizeCore.php)!'.PHP_EOL); 
+else require_once (realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR.'sanitizeCore.php'); 
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.7';
+$HRScanVersion = 'v1.8';
 $versions = 'PHP-AV App v4.0 | Virus Definition v4.9, 4/10/2019';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
