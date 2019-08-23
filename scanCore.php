@@ -38,7 +38,12 @@ else $IP = htmlentities(str_replace(str_split('~#[](){};:$!#^&%@>*<"\''), '', $_
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets an echo variable that adjusts printed URL's to https when SSL is enabled.
+// / To set a static setting, simply comment the following line (by prefacing with // ) and uncomment the one you want.
 if ($_SERVER['SERVER_PORT'] !== 443) $URLEcho = 's'; 
+// / Uncomment the following to specify plain-text (HTTP) urls.
+//$URLEcho = "";
+// / Uncomment the following to specify encrypted (HTTPS) urls.
+//$URLEcho = 's';
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
@@ -50,34 +55,34 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.9';
-$versions = 'PHP-AV App v4.1 | Virus Definition v5.0, 8/22/2019';
+$HRScanVersion = 'v2.0';
+$versions = 'PHP-AV App v4.2 | Virus Definition v5.0, 8/22/2019';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
 $JanitorDeleteIndex = FALSE;
 $Current_URL = "http$URLEcho://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $SesHash = substr(hash('ripemd160', $Date.$Salts1.$Salts2.$Salts3.$Salts4.$Salts5.$Salts6), -12);
 $SesHash2 = substr(hash('ripemd160', $SesHash.$Token1.$Date.$IP.$Salts1.$Salts2.$Salts3.$Salts4.$Salts5.$Salts6), -12);
-$SesHash3 = $SesHash.'/'.$SesHash2;
+$SesHash3 = $SesHash.DIRECTORY_SEPARATOR.$SesHash2;
 $SesHash4 = hash('ripemd160', $Salts6.$Salts5.$Salts4.$Salts3.$Salts2.$Salts1);
-$ScanDir0 = $ScanLoc.'/'.$SesHash;
-$ScanDir = $ScanDir0.'/'.$SesHash2;
-$ScanTemp = $InstLoc.'/DATA';
-$ScanTempDir0 = $ScanTemp.'/'.$SesHash;
-$ScanTempDir = $ScanTempDir0.'/'.$SesHash2;
+$ScanDir0 = $ScanLoc.DIRECTORY_SEPARATOR.$SesHash;
+$ScanDir = $ScanDir0.DIRECTORY_SEPARATOR.$SesHash2;
+$ScanTemp = $InstLoc.DIRECTORY_SEPARATOR.'DATA';
+$ScanTempDir0 = $ScanTemp.DIRECTORY_SEPARATOR.$SesHash;
+$ScanTempDir = $ScanTempDir0.DIRECTORY_SEPARATOR.$SesHash2;
 $LogInc = '0';
 $ScanGuiCounter1 = $ConsolidateLogs = 0;
-$LogFile = $LogDir.'/HRScan2_'.$LogInc.'_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
+$LogFile = $LogDir.DIRECTORY_SEPARATOR.'HRScan2_'.$LogInc.'_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
 $ClamLogFileName = 'ClamScan_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
-$ClamLogFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanDir.'/'.$ClamLogFileName)));
-$ClamLogTempFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanTempDir.'/'.$ClamLogFileName)));
+$ClamLogFile = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, str_replace('..', '', str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $ScanDir.DIRECTORY_SEPARATOR.$ClamLogFileName)));
+$ClamLogTempFile = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, str_replace('..', '', str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $ScanTempDir.DIRECTORY_SEPARATOR.$ClamLogFileName)));
 $PHPAVLogFileName = 'PHPAVScan_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
-$PHPAVLogFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanDir.'/'.$PHPAVLogFileName)));
-$PHPAVLogTempFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanTempDir.'/'.$PHPAVLogFileName)));
+$PHPAVLogFile = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, str_replace('..', '', str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR,DIRECTORY_SEPARATOR, $ScanDir.DIRECTORY_SEPARATOR.$PHPAVLogFileName)));
+$PHPAVLogTempFile = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, str_replace('..', '', str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $ScanTempDir.DIRECTORY_SEPARATOR.$PHPAVLogFileName)));
 $ConsolidatedLogFileName = 'ScanAll_'.$Date.'_'.substr($SesHash4, -7).'_'.substr($SesHash, -7).'.txt';
-$ConsolidatedLogFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanDir.'/'.$ConsolidatedLogFileName)));
-$ConsolidatedLogTempFile = str_replace('//', '/', str_replace('..', '', str_replace('//','/', $ScanTempDir.'/'.$ConsolidatedLogFileName)));
-$defaultLogDir = $InstLoc.'/Logs';
+$ConsolidatedLogFile = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, str_replace('..', '', str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $ScanDir.DIRECTORY_SEPARATOR.$ConsolidatedLogFileName)));
+$ConsolidatedLogTempFile = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, str_replace('..', '', str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $ScanTempDir.DIRECTORY_SEPARATOR.$ConsolidatedLogFileName)));
+$defaultLogDir = $InstLoc.DIRECTORY_SEPARATOR.'Logs';
 $defaultLogSize = '1048576';
 $defaultApps = array('index.html', '.', '..', '..');
 $RequiredDirs = array($LogDir, $defaultLogDir, $ScanDir0, $ScanDir, $ScanTemp, $ScanTempDir0, $ScanTempDir);
@@ -115,9 +120,9 @@ function cleanFiles($path) {
   if (is_dir($path)) { 
     $i = scandir($path);
     foreach($i as $f) { 
-      if (is_file($path.'/'.$f) && !in_array(basename($path.'/'.$f), $defaultApps)) @unlink($path.'/'.$f);  
-      if (is_dir($path.'/'.$f) && !in_array(basename($path.'/'.$f), $defaultApps) && is_dir_empty($path)) @rmdir($path.'/'.$f);
-      if (is_dir($path.'/'.$f) && !in_array(basename($path.'/'.$f), $defaultApps) && !is_dir_empty($path)) cleanFiles($path.'/'.$f); } 
+      if (is_file($path.DIRECTORY_SEPARATOR.$f) && !in_array(basename($path.DIRECTORY_SEPARATOR.$f), $defaultApps)) @unlink($path.DIRECTORY_SEPARATOR.$f);  
+      if (is_dir($path.DIRECTORY_SEPARATOR.$f) && !in_array(basename($path.DIRECTORY_SEPARATOR.$f), $defaultApps) && is_dir_empty($path)) @rmdir($path.DIRECTORY_SEPARATOR.$f);
+      if (is_dir($path.DIRECTORY_SEPARATOR.$f) && !in_array(basename($path.DIRECTORY_SEPARATOR.$f), $defaultApps) && !is_dir_empty($path)) cleanFiles($path.DIRECTORY_SEPARATOR.$f); } 
     if ($path !== $ScanLoc && $path !== $ScanTemp) @rmdir($path); } }
 // / -----------------------------------------------------------------------------------
 
@@ -127,10 +132,10 @@ if (!is_numeric($MaxLogSize)) $MaxLogSize = $defaultLogSize;
 if (!is_dir($LogDir)) mkdir($LogDir);
 if (!is_dir($LogDir)) $LogDir = $defaultLogDir;
 if (!is_dir($LogDir)) die('ERROR!!! HRScan278, The specified $LogDir does not exist at '.$LogDir.' on '.$Time.'.');
-if (!file_exists($LogDir.'/index.html')) copy('index.html', $LogDir.'/index.html');
+if (!file_exists($LogDir.DIRECTORY_SEPARATOR.'index.html')) copy('index.html', $LogDir.DIRECTORY_SEPARATOR.'index.html');
 while (file_exists($LogFile) && round((filesize($LogFile) / $MaxLogSize), 2) > $MaxLogSize) { 
   $LogInc++; 
-  $LogFile = $LogDir.'/HRScan2_'.$LogInc.'.txt.'; 
+  $LogFile = $LogDir.DIRECTORY_SEPARATOR.'HRScan2_'.$LogInc.'.txt.'; 
   $MAKELogFile = file_put_contents($LogFile, 'OP-Act: Logfile created on '.$Time.'.'.PHP_EOL, FILE_APPEND); }
 if (!file_exists($LogFile)) $MAKELogFile = file_put_contents($LogFile, 'OP-Act: Logfile created on '.$Time.'.'.PHP_EOL, FILE_APPEND);
 // / -----------------------------------------------------------------------------------
@@ -146,7 +151,7 @@ foreach ($RequiredDirs as $RequiredDir) {
     $txt = ('OP-Act: Created a directory at '.$RequiredDir.' on '.$Time.'.');
     $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND); } }
 foreach ($RequiredIndexes as $RequiredIndex) { 
-  copy ('index.html', $RequiredIndex.'/index.html'); }
+  copy ('index.html', $RequiredIndex.DIRECTORY_SEPARATOR.'index.html'); }
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
@@ -156,8 +161,8 @@ if (file_exists($ScanTemp)) {
   $now = time();
   foreach ($DFiles as $DFile) { 
     if (in_array($DFile, $defaultApps)) continue;
-    $DFilePath = $ScanTemp.'/'.$DFile;
-    if ($DFilePath == $ScanTemp.'/index.html') continue; 
+    $DFilePath = $ScanTemp.DIRECTORY_SEPARATOR.$DFile;
+    if ($DFilePath == $ScanTemp.DIRECTORY_SEPARATOR.'index.html') continue; 
     if ($now - fileTime($DFilePath) > ($Delete_Threshold * 60)) { // Time to keep files.
       if (is_dir($DFilePath)) { 
         @chmod ($DFilePath, 0755);
@@ -193,7 +198,7 @@ if(!empty($_FILES)) {
       echo nl2br($txt."\n"); 
       continue; }
     $F2 = pathinfo($file, PATHINFO_BASENAME);
-    $F3 = str_replace(' ', '_', str_replace('//', '/', $ScanDir.'/'.$F2));
+    $F3 = str_replace(' ', '_', str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $ScanDir.DIRECTORY_SEPARATOR.$F2));
     if($file == "") {
       $txt = ("ERROR!!! HRScan2160, No file specified on $Time.");
       $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND);
@@ -236,7 +241,7 @@ if (isset($_POST["clamScanButton"])) {
       $txt = 'OP-Act: Scanning '.$File.'.';
       $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND);
       $MAKELogFile = file_put_contents($ClamLogFile, $txt.PHP_EOL, FILE_APPEND);
-      if (!file_exists($ScanDir.'/'.$File)) { 
+      if (!file_exists($ScanDir.DIRECTORY_SEPARATOR.$File)) { 
         $txt = 'ERROR!!! HRScan2244, '.$File.' does not exist on '.$Time.'!';
         $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND);
         $MAKELogFile = file_put_contents($ClamLogFile, $txt.PHP_EOL, FILE_APPEND);
@@ -269,7 +274,7 @@ if (isset($_POST['phpavScanButton'])) {
     $txt = ('OP-Act: Scanning file '.$File.' on '.$Time.'.');
     $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND);
     $MAKELogFile = file_put_contents($PHPAVLogFile, $txt.PHP_EOL, FILE_APPEND); 
-    if (!file_exists($ScanDir.'/'.$File)) { 
+    if (!file_exists($ScanDir.DIRECTORY_SEPARATOR.$File)) { 
       $txt = 'ERROR!!! HRScan2276, '.$File.' does not exist on '.$Time.'!';
       $MAKELogFile = file_put_contents($LogFile, $txt.PHP_EOL, FILE_APPEND);
       $MAKELogFile = file_put_contents($PHPAVLogFile, $txt.PHP_EOL, FILE_APPEND);

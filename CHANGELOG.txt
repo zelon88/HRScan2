@@ -1,3 +1,11 @@
+commit 8/23/2019
+v2.0 - Convert all hardcoded directory separators with DIRECTORY_SEPARATOR.
+
+-v2.0.
+-PHP-AV Engine to v4.2.
+-Make HRScan2 more platform agnostic by replacing all the '/' and '//' references with the more OS independant DIRECTORY_SEPARATOR.
+
+--------------------
 COMMIT 8/22/2019
 v1.9 - Fix a bunch of inconsistencies in virus.def, fix false negatives, improve performance.
 

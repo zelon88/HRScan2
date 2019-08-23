@@ -17,14 +17,14 @@ function file_scan($folder, $defs, $debug, $AVLogFile) {
   $dircount = 0;
   if ($d = @dir($folder)) {
     while (false !== ($entry = $d->read())) {
-      $isdir = @is_dir($folder.'/'.$entry);
+      $isdir = @is_dir($folder.DIRECTORY_SEPARATOR.$entry);
       if (!$isdir and $entry != '.' and $entry != '..') {      
-        virus_check($folder.'/'.$entry, $defs, $debug, $defData); } 
+        virus_check($folder.DIRECTORY_SEPARATOR.$entry, $defs, $debug, $defData); } 
       elseif ($isdir and $entry != '.' and $entry != '..') {
         $txt = 'OP-Act: Scanning folder '.$folder.' ... ';
         $MAKELogFile = file_put_contents($AVLogFile, $txt.PHP_EOL, FILE_APPEND);        
         $dircount++;
-        file_scan($folder.'/'.$entry, $defs, $debug, $defData); } }
+        file_scan($folder.DIRECTORY_SEPARATOR.$entry, $defs, $debug, $defData); } }
     $d->close(); } }
 
 function load_defs($file, $debug) {
