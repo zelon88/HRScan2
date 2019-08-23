@@ -38,7 +38,7 @@ else $IP = htmlentities(str_replace(str_split('~#[](){};:$!#^&%@>*<"\''), '', $_
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets an echo variable that adjusts printed URL's to https when SSL is enabled.
-if (!empty($_SERVER['HTTPS']) && $_SERVER['SERVER_PORT'] == 443) $URLEcho = 's'; 
+if ($_SERVER['SERVER_PORT'] !== 443) $URLEcho = 's'; 
 // / -----------------------------------------------------------------------------------
 
 // / -----------------------------------------------------------------------------------
@@ -50,8 +50,8 @@ if (!isset($Token2)) $Token2 = hash('ripemd160', $Token1.$Salts1.$Salts2.$Salts3
 
 // / -----------------------------------------------------------------------------------
 // / The following code sets the global variables for the session.
-$HRScanVersion = 'v1.8';
-$versions = 'PHP-AV App v4.0 | Virus Definition v4.9, 4/10/2019';
+$HRScanVersion = 'v1.9';
+$versions = 'PHP-AV App v4.1 | Virus Definition v5.0, 8/22/2019';
 $Date = date("m_d_y");
 $Time = date("F j, Y, g:i a"); 
 $JanitorDeleteIndex = FALSE;

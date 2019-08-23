@@ -1,3 +1,23 @@
+COMMIT 8/22/2019
+v1.9 - Fix a bunch of inconsistencies in virus.def, fix false negatives, improve performance.
+
+-v1.9.
+-PHP-AV Engine to v4.1.
+-AV Defs to v5.0.
+-Fix bugs with whitespace in the data match code.
+-Fixed bugs when not run on an HTTPS server.
+-Redesign some of the checks in PHP-AV-Lib.
+-Reduce false negatives.
+-Improve performance.
+
+--------------------
+COMMIT 8/21/2019
+v1.8 - Add more robust absolute path generation.
+
+-v1.8.
+-Copy/paste some absolute path code from HRCloud2.
+
+--------------------
 COMMIT 4/10/2019
 v1.7 - PHP-AV App to v4.0. Defs to v4.9. Improve consistency of scan results.
 
