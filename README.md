@@ -11,3 +11,4 @@
 ![HRScan2](https://github.com/zelon88/HRScan2/blob/master/Screenshots/HRScan2_2.png)
 ![HRScan2](https://github.com/zelon88/HRScan2/blob/master/Screenshots/HRScan2_3.png)
 ![HRScan2](https://github.com/zelon88/HRScan2/blob/master/Screenshots/HRScan2_4.png)
+![HRScan2](https://github.com/zelon88/HRScan2/blob/master/Screenshots/HRScan2_5.png)
